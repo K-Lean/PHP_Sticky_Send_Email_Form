@@ -1,0 +1,48 @@
+/* 
+* Ejemplo de un simple formulario para envio 
+* masivo de emails.
+*
+* K-Lean | leandronafissi.com.ar
+*/
+
+
+Para realizar una prueba: 
+
+1 - Crear ua base de datos en un servidor MySQL.
+
+	mysql> CREATE DATABE nombre_de_tu_db;
+
+2- Luego crear una tabla similar a siguiente:
+
++---------+----------+------------------------+
+| nombre  | apellido | email                  |
++---------+----------+------------------------+
+| Juan    | Perez    | juan_perez@mail.com    |
+| Ana     | Martinez | ana_23@mail.com        |
++---------+----------+------------------------+
+	Para ello hacemos:
+
+		mysql> USE nombre_de_tu_base_de_datos;
+		
+		mysql> CREATE TABLE nombre_de_tu_tabla (
+					nombre varchar(30),
+					apellido varchar(30),
+					email varchar(50)
+				);
+  
+
+3- Luego cambia los valores de las variables de conexión a la base
+	en el documento StickyForm.php
+
+	// Datos de conexion a la base de datos MYSQL
+    // Cambia estos valores por los tuyos: 
+		
+		$url_db = 'localhost';
+		$usuario_db = 'tu_nombre_de_usuario';
+		$password_db = 'tu_contraseña';
+		$nombre_db = 'nombre_de_tu_base_de_datos';
+		$nombre_tabla_db = 'nombre_de_tu_tabla';
+
+4- El bloque que envía el email es un Dummy, es decir no se envia nada.
+	Podes usar PHPMailer para construir el envio.
+	
